@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>WebUni - Education Template</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="WebUni Education Template">
+    <meta name="keywords" content="webuni, education, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/college.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-qNVpEGaXBtIOjPr3wKNUBzVclDvmOY0bt5kGCW3MI0Jmo0WdK3iwZQ1hhaS/jGD9" crossorigin="anonymous">
+
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        @keyframes fadeInFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-float {
+            animation: fadeInFloat 1.5s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .delay-1s {
+            animation-delay: 1s;
+        }
+
+        .floating-content:hover {
+            transform: translateY(-5px);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hero-section.set-bg {
+            animation: fadeInFloat 2s ease-out;
+            animation-fill-mode: forwards;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .copyright {
+            text-align: center;
+            float: none;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            flex-grow: 0;
+        }
+
+        .container-fluid {
+            width: 1200px;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            gap: 60px;
+        }
+
+        img {
+            max-width: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""><img src="img/college logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Guidance Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="guidanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Guidance
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="guidanceDropdown">
+                            <li><a class="dropdown-item" href="career.php">College Selection</a></li>
+                            <li><a class="dropdown-item" href="guidence.php">Importance of College</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Course</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculator.php">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faculty.php">Faculty</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <section class="hero-section set-bg" data-setbg="images/education.jpg" style="background-position: center;">
+        <div class="container">
+            <div class="hero-text text-white floating-content">
+                <h2 class="fade-in-float">Find Your Future Arena</h2>
+                <p class="fade-in-float delay-1s">
+                    Choosing the right college is one of the most important decisions you’ll
+                    make. Our app is here to empower you with the information and resources
+                    you need.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-section spad">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Course Categories</h2>
+                <p>With countless colleges and courses available, take the time to explore. We provide detailed insights into the best institutions tailored for your interests.</p>
+                <p>Our app gives you access to real student reviews, ratings, and essential information to make informed decisions</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="categorie-item">
+                        <div class="ci-thumb set-bg" data-setbg="img/categories/1.jpg"></div>
+                        <div class="ci-text">
+                            <h5>B.E</h5>
+                            <p>Engineering is the application of science, mathematics, and technology to solve real-world problems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="categorie-item">
+                        <div class="ci-thumb set-bg" data-setbg="img/categories/2.jpg"></div>
+                        <div class="ci-text">
+                            <h5>B.Sc</h5>
+                            <p>B.Sc. opens doors to scientific exploration and diverse career paths.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="categorie-item">
+                        <div class="ci-thumb set-bg" data-setbg="img/categories/3.jpg"></div>
+                        <div class="ci-text">
+                            <h5>BDS</h5>
+                            <p>BDS is the gateway to a fulfilling career in dentistry.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="categorie-item">
+                        <div class="ci-thumb set-bg" data-setbg="img/categories/4.jpg"></div>
+                        <div class="ci-text">
+                            <h5>BBA</h5>
+                            <p>BBA equips students with essential business and management skills.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="categorie-item">
+                        <div class="ci-thumb set-bg" data-setbg="img/categories/5.jpg"></div>
+                        <div class="ci-text">
+                            <h5>B.Ed</h5>
+                            <p>B.Ed prepares students for work as teachers in schools.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="categorie-item">
+                        <div class="ci-thumb set-bg" data-setbg="img/categories/6.jpg"></div>
+                        <div class="ci-text">
+                            <h5>B.Pharm</h5>
+                            <p>B.Pharm teaches students about the field of pharmacy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-bottom">
+        <div class="footer-warp">
+            <div class="copyright">
+                <p class="text-center">Copyrights@2024 </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/circle-progress.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0d9xZtEYY30DNp1wEKRlrdXHtx1uI8vJb3Vaeu+Jt8+bxFwD" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>College Admission</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #007bff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .important-dates ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .important-dates ul li {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .application-form textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .application-form input, .application-form select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Admissions - College Name</h1>
+
+        <!-- Eligibility Criteria -->
+        <section>
+            <h2>Eligibility Criteria</h2>
+            <p>To be eligible for admission, the student must have completed 12th grade (or equivalent) with at least 60% marks in the following subjects:</p>
+            <ul>
+                <li>Mathematics</li>
+                <li>Physics</li>
+                <li>Chemistry</li>
+            </ul>
+            <p>In addition, the student must have a valid score in any national or state-level engineering entrance exam.</p>
+        </section>
+
+        <!-- Admission Process -->
+        <section>
+            <h2>Admission Process</h2>
+            <p>The admission process consists of the following steps:</p>
+            <ul>
+                <li>Submit the online application form through our website.</li>
+                <li>Upload the required documents such as 12th grade marksheet, entrance exam scorecard, etc.</li>
+                <li>Appear for the personal interview, if shortlisted.</li>
+                <li>Final selection will be based on academic performance, entrance exam score, and the interview.</li>
+            </ul>
+        </section>
+
+        <!-- Important Dates -->
+        <section class="important-dates">
+            <h2>Important Dates</h2>
+            <ul>
+                <li>Application Start Date: May 1, 2024</li>
+                <li>Application Deadline: June 30, 2024</li>
+                <li>Interview Dates: July 15 - 20, 2024</li>
+                <li>Final Selection Announcement: August 5, 2024</li>
+            </ul>
+        </section>
+
+        <!-- Application Form -->
+        <section class="application-form">
+            <h2>Apply Now</h2>
+            <form id="applicationForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="dob" placeholder="Date of Birth (DD/MM/YYYY)" required>
+                
+                <select name="course" required>
+                    <option value="">Select Course</option>
+                    <option value="computer-science">B.Tech - Computer Science</option>
+                    <option value="mechanical">B.Tech - Mechanical Engineering</option>
+                    <option value="civil">B.Tech - Civil Engineering</option>
+                    <option value="electronics">B.Tech - Electronics Engineering</option>
+                </select>
+
+                <textarea name="address" placeholder="Your Address" required></textarea>
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        const applicationForm = document.getElementById('applicationForm');
+        applicationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const course = document.querySelector('select[name="course"]').value;
+
+            if (!course) {
+                alert("Please select a course before submitting.");
+                return;
+            }
+
+            alert(`Application submitted successfully!\n\nName: ${name}\nEmail: ${email}\nCourse: ${course}`);
+            // Here you can handle form data submission to server or process the data locally.
+        });
+    </script>
+
+</body>
+
+</html>

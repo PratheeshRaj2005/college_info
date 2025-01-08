@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>College Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            background-color: #f8f9fa;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: left;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Content area styling */
+        .content {
+            background-color: #ffffff;
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .content h2 {
+            color: #343a40;
+        }
+
+        .content p {
+            color: #555;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .total {
+            font-weight: bold;
+            background-color: #e9ecef;
+        }
+
+        .fees-info {
+            font-size: 1.2em;
+            color: #495057;
+            margin-top: 20px;
+        }
+
+        .note {
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        /* Scholarship Cards Styling */
+        .scholarship-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .scholarship-title {
+            font-size: 1.5em;
+            color: #33a2ec;
+            margin-bottom: 10px;
+        }
+
+        .apply-button {
+            background-color: #1886c1;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .apply-button:hover {
+            background-color: #1a8dd0;
+        }
+
+        /* Review page styles */
+        .review-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        .review-item h3 {
+            font-size: 1.5em;
+            color: #007bff;
+        }
+
+        .review-item p {
+            font-size: 1.1em;
+            color: #495057;
+        }
+
+        .rating-stars {
+            color: gold;
+            font-size: 1.5em;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2em;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .star-rating input:checked~label {
+            color: gold;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 30px auto;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-align: center;
+            max-width: 200px;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar buttons -->
+        <div class="sidebar">
+            <button class="btn" onclick="loadContent('cutoff')">Cutoff</button>
+            <button class="btn" onclick="loadContent('fees')">Fees</button>
+            <button class="btn" onclick="loadContent('review')">Reviews</button>
+            <button class="btn" onclick="loadContent('admission')">Admissions</button>
+            <button class="btn" onclick="loadContent('placements')">Placements</button>
+            <button class="btn" onclick="loadContent('rankings')">Rankings</button>
+            <button class="btn" onclick="loadContent('infrastructure')">Infrastructure</button>
+            <button class="btn" onclick="loadContent('scholarship')">Scholarships</button>
+            <button class="btn" onclick="loadContent('news')">News</button>
+            <button class="btn" onclick="loadContent('location')">Location</button>
+            <button class="btn" onclick="loadContent('ratings')">Ratings</button>
+        </div>
+
+        <!-- Content area -->
+        <div class="content" id="content-area">
+            <h2>Welcome to Saveetha School Of Engineering</h2>
+            <p>Select an option on the left to learn more about this college.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to load the content dynamically
+        function loadContent(page) {
+            const contentArea = document.getElementById('content-area');
+
+            // Placeholder content for each section
+            const pages = {
+                cutoff: `<h1>Cutoff Information</h1><p>Below are the cutoff scores for various courses for the academic year 2024:</p><table class="table table-bordered"><thead><tr><th>Course</th><th>Cutoff Score</th></tr></thead><tbody><tr><td>B.Tech in Computer Science</td><td>95</td></tr><tr><td>B.Tech in Information Technology</td><td>90</td></tr><tr><td>B.Tech in Electronics</td><td>85</td></tr><tr><td>B.Sc. in Mathematics</td><td>80</td></tr><tr><td>B.Com. (Hons)</td><td>75</td></tr><tr><td>BA in English</td><td>70</td></tr></tbody></table>`,
+                fees: `<h1>Fee Structure</h1><table><thead><tr><th>Fee Type</th><th>Amount (INR)</th></tr></thead><tbody><tr><td>Tuition Fees (Annual)</td><td>₹ 1,50,000</td></tr><tr><td>Hostel Fees (Annual)</td><td>₹ 60,000</td></tr><tr><td>Exam Fees</td><td>₹ 5,000</td></tr><tr><td>Library Fees</td><td>₹ 3,000</td></tr><tr><td>Miscellaneous</td><td>₹ 10,000</td></tr><tr class="total"><td>Total Fees (Annual)</td><td>₹ 2,28,000</td></tr></tbody></table><div class="fees-info"><p><strong>Note:</strong> The above fee structure is subject to revision as per college policies. Scholarships and fee waivers may be available for eligible students.</p><p class="note">* Please contact the admissions office for details on installment payment plans or financial aid.</p></div>`,
+                review: `
+                <div>
+                    <h2>Student Reviews</h2>
+                    <form id="reviewForm">
+                        <textarea name="review" placeholder="Write your review here..." required></textarea>
+                        <div class="star-rating">
+                            <input type="radio" name="rating" id="1-star" value="1">
+                            <label for="1-star" title="1 star">★</label>
+
+                            <input type="radio" name="rating" id="2-stars" value="2">
+                            <label for="2-stars" title="2 stars">★</label>
+
+                            <input type="radio" name="rating" id="3-stars" value="3">
+                            <label for="3-stars" title="3 stars">★</label>
+
+                            <input type="radio" name="rating" id="4-stars" value="4">
+                            <label for="4-stars" title="4 stars">★</label>
+
+                            <input type="radio" name="rating" id="5-stars" value="5">
+                            <label for="5-stars" title="5 stars">★</label>
+                        </div>
+                        <button type="submit">Submit Review</button>
+                    </form>
+                    <div class="review-list">
+            <h2>What Others Are Saying</h2>
+
+            <div class="review-item">
+                <h3>John Doe</h3>
+                <p class="rating-stars">★★★★☆</p>
+                <p>Great college with amazing infrastructure and excellent faculty.</p>
+            </div>
+
+            <div class="review-item">
+                <h3>Jane Smith</h3>
+                <p class="rating-stars">★★★☆☆</p>
+                <p>The college offers good placements, but the hostel facilities can be improved.</p>
+            </div>
+
+            <div class="review-item">
+                <h3>Emily Johnson</h3>
+                <p class="rating-stars">★★★★★</p>
+                <p>A wonderful environment for learning, with lots of opportunities for growth.</p>
+            </div>
+        </div>
+
+                </div>`,
+                admission: `<h1>Admissions Information</h1><p>Admissions to Saveetha School Of Engineering are based on entrance exams...</p>`,
+                placements: `<h1>Placements</h1><p>The college has a strong placement record...</p>`,
+                rankings: `<h1>Rankings</h1><p>Saveetha School Of Engineering ranks among the top 50 engineering colleges...</p>`,
+                infrastructure: `<h1>Infrastructure</h1><p>State-of-the-art labs, libraries, and sports facilities...</p>`,
+                scholarship: `<h1>Scholarships</h1><p>The college offers merit-based and need-based scholarships...</p>`,
+                news: `<h1>News & Updates</h1><p>Stay updated with the latest news from Saveetha School Of Engineering...</p>`,
+                location: `<h1>Location</h1><p>Conveniently located in the heart of the city, the campus is easily accessible...</p>`,
+                ratings: `<h1>College Ratings</h1><p>Overall Ratings: 4.5/5...</p>`
+            };
+
+            // Update the content area with the selected page
+            contentArea.innerHTML = pages[page];
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Info App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://c4.wallpaperflare.com/wallpaper/452/816/905/circuits-electronics-digital-art-wallpaper-preview.jpg"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            background-image: url("https://c1.wallpaperflare.com/preview/339/1006/512/foreground-institution-maliankara-kerala.jpg");
+            background-size: cover;
+        }
+
+        .container {
+            margin-top: 20px;
+            width: 150vw;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #f9fafb;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .col-md-4 {
+            max-width: 25%;
+        }
+
+        .col-md-8 {
+            max-width: 90%;
+            color: white;
+        }
+
+        .state-list {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            height: 100%;
+            box-shadow: 0 4px 8px rgb(220, 214, 214);
+        }
+
+        .state-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .state-list ul li {
+            margin-bottom: 10px;
+        }
+
+        .state-list ul li button {
+            width: 100%;
+            text-align: left;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .state-list ul li button:hover {
+            background-color: #0056b3;
+        }
+
+        .college-info {
+            background-color:white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color:black;
+            width: 50vw;
+        }
+
+        .college-info h2 {
+            color: #007bff;
+        }
+
+        .college-info p {
+            color:black;
+        }
+
+        .college-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .college-item button {
+            background-color:black;
+            color:blue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .college-item button:hover {
+            background-color:black;
+        }
+
+        .college-description {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>College Info - Best Engineering Colleges</h1>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by college name..." class="form-control" onkeyup="filterColleges()">
+        </div>
+
+        <div class="row">
+            <!-- State Selection -->
+            <div class="col-md-4">
+                <div class="state-list">
+                    <h2>Select a State</h2>
+                    <ul>
+                        <li><button onclick="showColleges('Maharashtra')">Maharashtra</button></li>
+                        <li><button onclick="showColleges('Karnataka')">Karnataka</button></li>
+                        <li><button onclick="showColleges('Tamil Nadu')">Tamil Nadu</button></li>
+                        <li><button onclick="showColleges('Uttar Pradesh')">Uttar Pradesh</button></li>
+                        <li><button onclick="showColleges('Delhi')">Delhi</button></li>
+                        <li><button onclick="showColleges('Kerala')">Kerala</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- College Info Display -->
+            <div class="col-md-8">
+                <div id="collegeInfo" class="college-info">
+                    <h2>Engineering</h2>
+                    <p>Engineering is the application of science, mathematics, and technology to solve real-world problems. It involves designing, building, and improving systems, machines, structures, and processes...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const collegesData = {
+            'Maharashtra': [
+                {
+                    name: 'IIT Bombay',
+                    description: 'IIT Bombay is one of the premier institutes in India known for its research, academic rigor, and innovation in various engineering fields.'
+                },
+                {
+                    name: 'VJTI, Mumbai',
+                    description: 'VJTI is a prestigious engineering college located in Mumbai, offering a range of undergraduate and postgraduate courses in engineering.'
+                },
+                {
+                    name: 'COEP Pune',
+                    description: 'College of Engineering Pune (COEP) is one of the oldest engineering colleges in India, offering top-tier engineering education.'
+                }
+            ],
+            'Karnataka': [
+                {
+                    name: 'IISc Bangalore',
+                    description: 'The Indian Institute of Science (IISc) in Bangalore is one of the best institutions for advanced scientific research and education in India.'
+                },
+                {
+                    name: 'RV College of Engineering, Bangalore',
+                    description: 'RV College of Engineering is a renowned engineering college in Bangalore, offering high-quality education in a variety of engineering disciplines.'
+                },
+                {
+                    name: 'BMS College of Engineering, Bangalore',
+                    description: 'BMS College of Engineering is one of the top private engineering colleges in Bangalore, offering excellent infrastructure and faculty.'
+                }
+            ]
+        };
+
+        function showColleges(state) {
+            const collegeList = collegesData[state];
+            const collegeInfoDiv = document.getElementById('collegeInfo');
+
+            if (collegeList) {
+                let collegeHTML = `<h2>Best Engineering Colleges in ${state}</h2>`;
+                collegeList.forEach(college => {
+                    collegeHTML += `
+                        <div class="college-description">
+                            <h3>${college.name}</h3>
+                            <p>${college.description}</p>
+                            <button onclick="exploreCollege('${college.name}')">Explore</button>
+                        </div>
+                    `;
+                });
+                collegeInfoDiv.innerHTML = collegeHTML;
+            } else {
+                collegeInfoDiv.innerHTML = `<h2>No data available for ${state}</h2>`;
+            }
+        }
+
+        function exploreCollege(collegeName) {
+            // Redirect to collegeinfo.html with the selected college's name as a query parameter
+            window.location.href = `collegeinfo.html?college=${encodeURIComponent(collegeName)}`;
+        }
+
+        function filterColleges() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const collegeDescriptions = document.querySelectorAll('.college-description');
+            collegeDescriptions.forEach(description => {
+                const collegeName = description.querySelector('h3').textContent.toLowerCase();
+                if (collegeName.indexOf(input) > -1) {
+                    description.style.display = "";
+                } else {
+                    description.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

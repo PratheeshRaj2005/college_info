@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+        overflow-x: hidden;
+      }
+
+      .favourite-places-bg-container {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk5xns-xXKe1DbgV3G5OQigOJfM0100r8Q3w&s");
+        height: 150vh;
+        background-size: 300px;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        overflow-x: auto;
+      }
+
+      .favourite-places-heading {
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .favourite-places-cards-container {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: space-between; /* Space out the cards */
+        width: 250%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .favourite-place-card-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 15px;
+        display: flex;
+        flex-direction: column; /* Ensure vertical stacking of elements */
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 30%;
+        flex-grow: 1;
+        position: relative;
+      }
+
+      .favourite-place-card-heading {
+        color: #0f0e46;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .favourite-place-card-description {
+        color: #6c6b70;
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .favourite-place-card-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background-color: #0f0e46;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      button:hover {
+        background-color: #6c6b70;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .favourite-places-cards-container {
+          flex-direction: column; /* Stack the cards vertically on smaller screens */
+        }
+
+        .favourite-place-card-container {
+          width: 100%; /* Make each card take full width on smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="favourite-places-bg-container">
+      <div class="container">
+        <h1 class="favourite-places-heading">List of Colleges</h1>
+
+        <div class="favourite-places-cards-container">
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">B.E</h1>
+            <p class="favourite-place-card-description">
+              Engineering offers diverse opportunities to innovate and impact society.
+            </p>
+            <img
+              src="https://cdn.mos.cms.futurecdn.net/HFUAjfbamNhbM8dsNSQW3D-1200-80.jpg"
+              class="favourite-place-card-image"
+              alt="Engineering"
+            />
+            <button onclick="window.location.href='engineering.html'">Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">B.Sc</h1>
+            <p class="favourite-place-card-description">
+              B.Sc. opens doors to scientific exploration and diverse career paths.
+            </p>
+            <img
+              src="https://www.cheggindia.com/wp-content/uploads/2023/08/bsc-full-form-1.png.webp"
+              class="favourite-place-card-image"
+              alt="B.Sc"
+            />
+            <button>Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">BDS</h1>
+            <p class="favourite-place-card-description">
+              BDS is the gateway to a fulfilling career in dentistry.
+            </p>
+            <img
+              src="https://st.adda247.com/https://www.adda247.com/jobs/wp-content/uploads/sites/2/2021/05/15135437/dentist.jpg"
+              class="favourite-place-card-image"
+              alt="Dentistry"
+            />
+            <button>Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">BBA</h1>
+            <p class="favourite-place-card-description">
+              BBA equips students with essential business and management skills.
+            </p>
+            <img
+              src="https://walshcollege.edu/wp-content/uploads/2023/10/BBA.jpg"
+              class="favourite-place-card-image"
+              alt="Business"
+            />
+            <button>Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">B.Ed</h1>
+            <p class="favourite-place-card-description">
+              B.Ed prepares students for work as teachers in schools.
+            </p>
+            <img
+              src="https://jhankargroupofcolleges.com/wp-content/uploads/2024/08/bachelor-education.jpg"
+              class="favourite-place-card-image"
+              alt="Education"
+            />
+            <button>Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">B.Pharm</h1>
+            <p class="favourite-place-card-description">
+              B.Pharm teaches students about the field of pharmacy.
+            </p>
+            <img
+              src="https://adharshilacollege.ac.in/wp-content/uploads/2022/08/Bachelor-of-Pharmacy_B_Pharm.png"
+              class="favourite-place-card-image"
+              alt="Pharmacy"
+            />
+            <button>Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">B.Tech</h1>
+            <p class="favourite-place-card-description">
+              Bachelor of Technology is a four-year undergraduate degree program in engineering or technology.
+            </p>
+            <img
+              src="https://www.sharda.ac.in/blog/attachments/blog_images/BTech_Full_Form.webp"
+              class="favourite-place-card-image"
+              alt="Technology"
+            />
+            <button>Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">B.A</h1>
+            <p class="favourite-place-card-description">
+              B.A provides a broad foundation in the liberal arts, humanities, and social sciences.
+            </p>
+            <img
+              src="https://gpcalour.com/wp-content/uploads/2024/03/BA-min.jpg"
+              class="favourite-place-card-image"
+              alt="Arts"
+            />
+            <button>Explore</button>
+          </div>
+
+          <div class="favourite-place-card-container">
+            <h1 class="favourite-place-card-heading">B.Com</h1>
+            <p class="favourite-place-card-description">
+              B.Com prepares students for careers in commerce, banking, and accounting.
+            </p>
+            <img
+              src="https://5.imimg.com/data5/SELLER/Default/2022/1/DJ/GR/BY/14474199/bachelor-of-commerce-course.png"
+              class="favourite-place-card-image"
+              alt="Commerce"
+            />
+            <button>Explore</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

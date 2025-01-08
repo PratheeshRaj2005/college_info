@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>College Admission</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #007bff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .state-list {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .state-list ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        .state-list ul li {
+            margin-bottom: 10px;
+        }
+
+        .state-list ul li button {
+            width: 100%;
+            text-align: left;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .state-list ul li button:hover {
+            background-color: #0056b3;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .col-md-8 {
+            flex: 0 0 66%;
+        }
+
+        .col-md-4 {
+            flex: 0 0 30%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Admissions - College Name</h1>
+
+        <div class="row">
+            <!-- Main Admission Section -->
+            <div class="col-md-8">
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search by college name..." class="form-control">
+                    <button onclick="performSearch()" class="btn btn-primary mt-2">Search</button>
+                </div>
+
+                <!-- Admission Details -->
+                <section>
+                    <h2>Eligibility Criteria</h2>
+                    <p>To be eligible for admission, the student must have completed 12th grade (or equivalent) with at least 60% marks in the following subjects:</p>
+                    <ul>
+                        <li>Mathematics</li>
+                        <li>Physics</li>
+                        <li>Chemistry</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Important Dates</h2>
+                    <ul>
+                        <li>Application Start Date: 1st April 2024</li>
+                        <li>Last Date to Apply: 30th June 2024</li>
+                        <li>Entrance Exam Date: 15th July 2024</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Application Process</h2>
+                    <p>Students can apply for admission by filling out the online form available on the official website. The following documents are required:</p>
+                    <ul>
+                        <li>Class 12th Marksheet</li>
+                        <li>Transfer Certificate</li>
+                        <li>Entrance Exam Scorecard</li>
+                        <li>Passport-size photographs</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- State Filter Section -->
+            <div class="col-md-4">
+                <div class="state-list">
+                    <h2>Filter by State</h2>
+                    <ul>
+                        <li><button onclick="filterByState('Maharashtra')">Maharashtra</button></li>
+                        <li><button onclick="filterByState('Karnataka')">Karnataka</button></li>
+                        <li><button onclick="filterByState('Tamil Nadu')">Tamil Nadu</button></li>
+                        <li><button onclick="filterByState('Uttar Pradesh')">Uttar Pradesh</button></li>
+                        <li><button onclick="filterByState('Delhi')">Delhi</button></li>
+                        <li><button onclick="filterByState('Kerala')">Kerala</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function performSearch() {
+            const searchValue = document.getElementById('searchInput').value;
+            alert("You searched for: " + searchValue);
+        }
+
+        function filterByState(state) {
+            alert("Filtering by state: " + state);
+        }
+    </script>
+
+</body>
+
+</html>

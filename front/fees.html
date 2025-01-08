@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fees - College Name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table th, table td {
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .total {
+            font-weight: bold;
+            background-color: #e9ecef;
+        }
+
+        .fees-info {
+            font-size: 1.2em;
+            color: #495057;
+            margin-top: 20px;
+        }
+
+        .note {
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 30px auto;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-align: center;
+            max-width: 200px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Fee Structure - College Name</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Amount (INR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fees (Annual)</td>
+                    <td>₹ 1,50,000</td>
+                </tr>
+                <tr>
+                    <td>Hostel Fees (Annual)</td>
+                    <td>₹ 60,000</td>
+                </tr>
+                <tr>
+                    <td>Exam Fees</td>
+                    <td>₹ 5,000</td>
+                </tr>
+                <tr>
+                    <td>Library Fees</td>
+                    <td>₹ 3,000</td>
+                </tr>
+                <tr>
+                    <td>Miscellaneous</td>
+                    <td>₹ 10,000</td>
+                </tr>
+                <tr class="total">
+                    <td>Total Fees (Annual)</td>
+                    <td>₹ 2,28,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="fees-info">
+            <p><strong>Note:</strong> The above fee structure is subject to revision as per college policies. Scholarships and fee waivers may be available for eligible students.</p>
+            <p class="note">* Please contact the admissions office for details on installment payment plans or financial aid.</p>
+        </div>
+
+        <button class="back-btn" onclick="location.href='index.html'">Go Back to Main Page</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>College Info App - Landing</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20200907/pngtree-graduation-cap-school-supplies-blackboard-education-background-image_397993.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .landing-container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .explore-button {
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .explore-button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+    <script>
+        function goToLogin() {
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+    </script>
+</head>
+<body>
+
+    <div class="landing-container">
+        <h1>Welcome to College Info App</h1>
+        <p>Discover the best colleges for your future</p>
+        <button class="explore-button" onclick="goToLogin()">Login</button>
+    </div>
+
+</body>
+</html>

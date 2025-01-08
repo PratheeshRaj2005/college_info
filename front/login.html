@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/school-office-colored-background-top-view-office-office-student-office_1257223-31022.jpg'); /* Add your background image URL here */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color:rgba(72, 194, 228, 0.252);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            opacity: 0.9; /* Slight transparency for better background visibility */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #555; /* Darker on hover for better visibility */
+        }
+
+        .signup-link, .forgot-password {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .forgot-password {
+            color: #333;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function redirectToHome() {
+            window.location.href = 'index.html'; // Redirect to index.html (homepage)
+        }
+    </script>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Login</h1>
+    <form>
+        <input type="text" name="username" placeholder="Enter Username" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="button" onclick="redirectToHome()">Login</button> <!-- Button triggers redirect -->
+    </form>
+    <p class="forgot-password"><a href="forgot-password.html">Forgot Password?</a></p>
+    <p class="signup-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
+</div>
+
+</body>
+</html>

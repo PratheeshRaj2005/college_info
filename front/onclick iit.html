@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .college-details {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .college-details h2 {
+            color: #007bff;
+        }
+
+        .college-details p {
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>College Information</h1>
+        <div id="collegeDetails" class="college-details">
+            <h2>College Details</h2>
+            <p id="collegeInfo">Loading college info...</p>
+        </div>
+        <button class="btn btn-primary" onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        // Function to get the URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Function to populate the college details
+        function loadCollegeInfo() {
+            const collegeName = getUrlParameter('college');
+            const collegeInfoElement = document.getElementById('collegeInfo');
+
+            if (collegeName) {
+                // Add custom information based on the college name
+                collegeInfoElement.innerHTML = `
+                    <h3>${collegeName}</h3>
+                    <p>Here you can add more details about ${collegeName}. This could include courses offered, infrastructure, rankings, and more!</p>
+                `;
+            } else {
+                collegeInfoElement.innerHTML = `<p>No college information available.</p>`;
+            }
+        }
+
+        // Load the college information when the page loads
+        window.onload = loadCollegeInfo;
+
+        // Go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    
+</body>
+
+</html>

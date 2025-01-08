@@ -1,0 +1,29 @@
+.para{
+    text-align: center;
+    padding:200px;
+    width: 100wx;
+    justify-content: center;
+    height: 100px;
+    background-color: brown;
+    margin-left: 200px;
+    background-image:url('tharun kumar.jpg');
+    margin-right: 200px;
+    margin-top: 80px;
+    background-size: cover;
+}
+.man{+
+    margin-top: 15px;
+    background-color: lightblue;
+}
+.par{
+    text-align: center;
+    padding:200px;
+    width: 100wx;
+    justify-content: center;
+    height: 100px;
+    background-color: brown;
+    margin-left: 200px;
+    background-image:url('pratheedh.jpg');
+    margin-right: 200px;
+    margin-top: 80px;
+    background-size: cover;

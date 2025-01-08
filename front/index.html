@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <style>
+        .obody {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .genre-button {
+            background-color: #4CAF50; /* Button color */
+            color: white; /* Text color */
+            border: none; /* No border */
+            padding: 15px 20px; /* Padding */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Transition */
+            margin: 5px; /* Space between buttons */
+        }
+
+        .genre-button:hover {
+            background-color: #45a049; /* Darker shade on hover */
+        }
+
+        .courses {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+        }
+
+        .course-list {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        .course-item {
+            background: white; /* Item background */
+            border: 1px solid #ccc; /* Border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding */
+            margin: 5px 0; /* Margin */
+        }
+
+        .bbody {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            background-color: #f4f4f4;
+        }
+
+        .stylish-button {
+            background-color: #4CAF50; /* Button color */
+            color: white; /* Text color */
+            border: none; /* No border */
+            padding: 15px 30px; /* Padding around text */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* No underline */
+            display: inline-block; /* Inline block */
+            font-size: 16px; /* Font size */
+            margin: 10px 2px; /* Margin */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+
+        /* Button hover effect */
+        .stylish-button:hover {
+            background-color: #45a049; /* Darker shade on hover */
+        }
+
+        /* Optional: Adding a shadow effect */
+        .stylish-button:active {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow on click */
+            transform: translateY(2px); /* Slight movement on click */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color:black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .hero {
+            background-image: url('https://t3.ftcdn.net/jpg/01/83/50/32/360_F_183503230_heDoLySnwt4W968RVTJOf7LFHbkZdCHA.jpg');
+            background-size: cover;
+            color: white;
+            height:100vh;
+            text-align: center;
+            padding: 50px 150px;
+        }
+        
+        .herobutton {
+            background-color: lightblue;
+            color: #333;
+            padding: 20px;
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome Students</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="contact.html" onclick="openContactPage()">Contact Us</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>Find Your Future Arena</h2>
+    <p>Your college experience is a transformative journey, filled with opportunities to grow, learn, and discover who you are.</p>
+    <p>Choosing the right college is one of the most important decisions you’ll make. Our app is here to empower you with the information and resources you need.</p>
+    <p>No dream is too big! Whether you aspire to be a doctor, engineer, artist, or entrepreneur, we’ll help you find the college that fits your goals.</p>
+    <p>With countless colleges and courses available, take the time to explore. We provide detailed insights into the best institutions tailored for your interests.</p>
+    <p>Our app gives you access to real student reviews, ratings, and essential information to make informed decisions.</p>
+    <p>Everyone’s journey is unique. Benefit from personalized counseling that considers your strengths, interests, and aspirations.</p>
+    <p>Remember, every great achievement starts with a decision to try. Stay motivated and focused on your academic journey.</p>
+    <p>Join a community of like-minded students who share your passions and goals. Together, you can inspire and support each other.</p>
+    <p>Challenges are stepping stones to success. Embrace them, learn from them, and let them guide you toward your future.</p>
+    <p>Every small achievement deserves recognition. Celebrate your progress and keep pushing toward your goals.</p>
+    <br>
+    <button class="stylish-button" onclick="window.location.href='listofcourses.html'">Explore!</button>
+</section>
+
+<section class="section" id="about">
+    <h2>About Us</h2>
+    <p>We are students just like you, navigating the journey of higher education. Our mission is to assist you in selecting the right college that aligns with your goals and aspirations. We understand that the college decision can be overwhelming, with numerous options available. That's why we provide detailed information about various colleges, including their programs, campus life, and admission requirements.</p>
+    <p>Our platform features student reviews and ratings, giving you insight into the experiences of others. We aim to empower you with the knowledge you need to make informed decisions about your future. Our dedicated team is here to answer your questions and offer guidance every step of the way.</p>
+    <p>Join us in exploring your options and discovering the best fit for your educational journey. Together, we can pave the way for a successful and fulfilling college experience!</p>
+</section>
+
+<section class="section" id="services">
+    <h2>Our Services</h2>
+    <p>We offer a wide range of services to meet all your needs.</p>
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out to us through our contact form or visit us at our office.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Our Company. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

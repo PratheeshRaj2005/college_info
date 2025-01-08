@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>College Reviews</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review-form {
+            margin-bottom: 50px;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            height: 120px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2em;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star-rating input:checked ~ label {
+            color: gold;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: gold;
+        }
+
+        .review-list {
+            margin-top: 30px;
+        }
+
+        .review-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        .review-item h3 {
+            font-size: 1.5em;
+            color: #007bff;
+        }
+
+        .review-item p {
+            font-size: 1.1em;
+            color: #495057;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 30px auto;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-align: center;
+            max-width: 200px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .rating-stars {
+            color: gold;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Reviews - College Name</h1>
+
+        <!-- Review Submission Form -->
+        <div class="review-form">
+            <h2>Submit Your Review</h2>
+            <form id="reviewForm">
+                <textarea name="review" placeholder="Write your review here..." required></textarea>
+
+                <div class="star-rating">
+                    <input type="radio" name="rating" id="1-star" value="1">
+                    <label for="1-star" title="1 star">★</label>
+
+                    <input type="radio" name="rating" id="2-stars" value="2">
+                    <label for="2-stars" title="2 stars">★</label>
+
+                    <input type="radio" name="rating" id="3-stars" value="3">
+                    <label for="3-stars" title="3 stars">★</label>
+
+                    <input type="radio" name="rating" id="4-stars" value="4">
+                    <label for="4-stars" title="4 stars">★</label>
+
+                    <input type="radio" name="rating" id="5-stars" value="5">
+                    <label for="5-stars" title="5 stars">★</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+
+        <!-- List of Reviews -->
+        <div class="review-list">
+            <h2>What Others Are Saying</h2>
+
+            <div class="review-item">
+                <h3>John Doe</h3>
+                <p class="rating-stars">★★★★☆</p>
+                <p>Great college with amazing infrastructure and excellent faculty.</p>
+            </div>
+
+            <div class="review-item">
+                <h3>Jane Smith</h3>
+                <p class="rating-stars">★★★☆☆</p>
+                <p>The college offers good placements, but the hostel facilities can be improved.</p>
+            </div>
+
+            <div class="review-item">
+                <h3>Emily Johnson</h3>
+                <p class="rating-stars">★★★★★</p>
+                <p>A wonderful environment for learning, with lots of opportunities for growth.</p>
+            </div>
+        </div>
+
+        <button class="back-btn" onclick="location.href='index.html'">Go Back to Main Page</button>
+    </div>
+
+    <script>
+        const reviewForm = document.getElementById('reviewForm');
+        reviewForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const reviewText = document.querySelector('textarea[name="review"]').value;
+
+            if (!rating) {
+                alert("Please select a rating before submitting.");
+                return;
+            }
+
+            alert(`Your review:\n\nRating: ${rating.value} stars\nReview: ${reviewText}`);
+            // Here you can handle the form data (rating.value, reviewText) to submit it to a server or store it locally.
+        });
+    </script>
+
+</body>
+
+</html>
